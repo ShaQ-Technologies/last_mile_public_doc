@@ -92,7 +92,7 @@ Description: Get all packages
                 "value": 5000,
                 "items": [
                     {
-                        "item" : "iPhone 6",
+                        "name" : "iPhone 6",
                         "quantity" : 1,
                     }
                 ],
