@@ -210,34 +210,35 @@ Description: Create a package for shipment
 
 ##### Request Parameters
 
-| Parameter                     | Type          | Description                           |
-| :---------------------------- | :------------ | :------------------------------------ |
-| `partner_ref`                 | `string`      | **required**.                         |
-| `customer_name`               | `string`      | **required**.                         |
-| `customer_phone_1`            | `string`      | **required**.                         |
-| `customer_phone_2`            | `string`      | **optional**.                         |
-| `source_country_iso2`         | `string`      | **required**.                         |
-| `source_address_line_1`       | `string`      | **required**.                         |
-| `source_address_line_2`       | `string`      | **optional**.                         |
-| `destination_country_iso2`    | `string`      | **required**.                         |
-| `destination_region`          | `string`      | **required**.                         |
-| `destination_city`            | `string`      | **required**.                         |
-| `destination_address_line_1`  | `string`      | **required**.                         |
-| `destination_address_line_2`  | `string`      | **optional**.                         |
-| `destination_postal_code`     | `string`      | **optional**.                         |
-| `length`                      | `decimal`     | **required**.                         |
-| `height`                      | `decimal`     | **required**.                         |
-| `weight`                      | `decimal`     | **required**.                         |
-| `description`                 | `string`      | **required**.                         |
-| `units`                       | `string`      | **required**.                         |
-| `type`                        | `string`      | **required** . in `parcel`, `box`     |
-| `handling`                    | `string`      | **required** . in `normal`, `fragile` |
-| `special_instructions`        | `string`      | **optional**.                         |
-| `latitude`                    | `decimal`     | **optional**.                         |
-| `longitude`                   | `decimal`     | **optional**.                         |
-| `value`                       | `decimal`     | **required**.                         |
-| `items`                       | `array`       | **required**. {name, quantity}        |
-| `include_label`               | `boolean`     | **optional**.   default `false`       |
+| Parameter                     | Type          | Description                                       |
+| :---------------------------- | :------------ | :------------------------------------------------ |
+| `partner_ref`                 | `string`      | **required**.                                     |
+| `customer_name`               | `string`      | **required**.                                     |
+| `customer_phone_1`            | `string`      | **required**.                                     |
+| `customer_phone_2`            | `string`      | **optional**.                                     |
+| `source_country_iso2`         | `string`      | **required**.                                     |
+| `source_address_line_1`       | `string`      | **required**.                                     |
+| `source_address_line_2`       | `string`      | **optional**.                                     |
+| `destination_country_iso2`    | `string`      | **required**.                                     |
+| `destination_region`          | `string`      | **required**.                                     |
+| `destination_city`            | `string`      | **required**.                                     |
+| `destination_address_line_1`  | `string`      | **required**.                                     |
+| `destination_address_line_2`  | `string`      | **optional**.                                     |
+| `destination_postal_code`     | `string`      | **optional**.                                     |
+| `length`                      | `decimal`     | **required**.                                     |
+| `height`                      | `decimal`     | **required**.                                     |
+| `weight`                      | `decimal`     | **required**.                                     |
+| `description`                 | `string`      | **required**.                                     |
+| `units`                       | `string`      | **required**.                                     |
+| `type`                        | `string`      | **required** . in `parcel`, `box`                 |
+| `handling`                    | `string`      | **required** . in `normal`, `fragile`             |
+| `special_instructions`        | `string`      | **optional**.                                     |
+| `latitude`                    | `decimal`     | **optional**.                                     |
+| `longitude`                   | `decimal`     | **optional**.                                     |
+| `value`                       | `decimal`     | **required**.                                     |
+| `items`                       | `array`       | **required**. {name, quantity}                    |
+| `include_label`               | `boolean`     | **optional**.   default `false`                   |
+| `region_id`                   | `integer`     | **required if `destination_region` is empty**.    |
 
 ##### Response
 
@@ -247,41 +248,46 @@ Description: Create a package for shipment
 {
     "message": "Package created successfully",
     "data": {
-        "partnerRef": "FGVHKJ567",
-        "trackingNumber": "20250410X51DIQ",
-        "customerName": "Kwaku Ananse",
-        "customerPhone1": "+233244100200",
+        "id": 1,
+        "partnerRef": "ASFWERTG",
+        "trackingNumber": "30A19BCC",
+        "customerName": "Najib Alhassan",
+        "customerPhone1": "0244100200",
         "customerPhone2": null,
         "sourceCountry": "Ghana",
-        "sourceAddressLine1": "Accra",
-        "sourceAddressLine2": "East Legon",
+        "sourceAddressLine1": "Accra, Ghana",
+        "sourceAddressLine2": null,
         "destinationCountry": "Ghana",
-        "destinationRegion": "Greater Accra",
-        "destinationCity": "Accra",
-        "destinationAddressLine1": "UPSA Hall, Room 3",
-        "destinationAddressLine2": "",
+        "destinationRegion": "Western",
+        "destinationCity": "Madina",
+        "destinationAddressLine1": "Jerusalem Street, Old Road",
+        "destinationAddressLine2": null,
         "destinationPostalCode": null,
-        "length": 31,
-        "height": 20,
-        "weight": 3,
-        "description": "iPhone 16 pro max black edge silver back casing",
+        "length": 3,
+        "height": 1,
+        "weight": 0.4,
+        "description": "Lorem Ipsum",
         "units": 1,
         "type": "parcel",
-        "value": 5000,
-        "items": [],
-        "handling": "normal",
+        "handling": "fragile",
         "specialInstructions": null,
-        "hasLabel": true,
+        "hasLabel": false,
         "status": "pending",
-        "statusDescription": "Package is yet to be received from Partner.",
+        "statusDescription": "Package is yet to be processed by Partner.",
         "latitude": null,
         "longitude": null,
-        "dateCreated": "2025-04-10 11:15",
+        "landmark": null,
+        "region": {
+            "id": 2,
+            "name": "Western"
+        },
+        "rider": null,
+        "dateCreated": "2025-06-05 11:11",
         "trackingHistory": [
             {
                 "name": "pending",
-                "description": "Package is yet to be received from Partner.",
-                "date": "2025-04-10 11:15"
+                "description": "Package is yet to be processed by Partner.",
+                "date": "2025-06-05 11:11"
             }
         ]
     }
@@ -436,3 +442,37 @@ Description: Get tracking statuses of a specific package
 
 
 
+
+### Get Regions
+
+```http
+GET /setup/regions
+```
+
+Description: Get all allowable regions
+
+##### Headers
+
+| Parameter       | Type     | Description   |
+| :-------------- | :------- | :------------ |
+| `Authorization` | `bearer` | **Required**. |
+
+##### Response
+
+200
+
+```json
+{
+    "message": "Request successful",
+    "data": [
+        {
+            "id": 16,
+            "name": "Western North"
+        },
+        {
+            "id": 15,
+            "name": "Ashanti"
+        },
+    ]
+}
+```
