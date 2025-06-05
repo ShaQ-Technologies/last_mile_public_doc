@@ -194,6 +194,32 @@ Description: Get package details
 }
 ```
 
+### Delete pending Package
+
+```http
+DELETE /package/{partnerRef}
+```
+
+Description: Delete a package. Only pending packages can be deleted
+
+##### Headers
+
+| Parameter       | Type     | Description   |
+| :-------------- | :------- | :------------ |
+| `Authorization` | `bearer` | **Required**. |
+
+##### Response
+
+200
+
+```json
+{
+    "message": "Package deleted",
+    "data": null
+}
+```
+
+
 ### Create Package
 
 ```http
@@ -220,14 +246,14 @@ Description: Create a package for shipment
 | `source_address_line_1`       | `string`      | **required**.                                     |
 | `source_address_line_2`       | `string`      | **optional**.                                     |
 | `destination_country_iso2`    | `string`      | **required**.                                     |
-| `destination_region`          | `string`      | **required**.                                     |
+| `destination_region`          | `string`      | **required if `region_id` is empty**.             |
 | `destination_city`            | `string`      | **required**.                                     |
 | `destination_address_line_1`  | `string`      | **required**.                                     |
 | `destination_address_line_2`  | `string`      | **optional**.                                     |
 | `destination_postal_code`     | `string`      | **optional**.                                     |
-| `length`                      | `decimal`     | **required**.                                     |
-| `height`                      | `decimal`     | **required**.                                     |
-| `weight`                      | `decimal`     | **required**.                                     |
+| `length`                      | `decimal`     | **optional**.                                     |
+| `height`                      | `decimal`     | **optional**.                                     |
+| `weight`                      | `decimal`     | **optional**.                                     |
 | `description`                 | `string`      | **required**.                                     |
 | `units`                       | `string`      | **required**.                                     |
 | `type`                        | `string`      | **required** . in `parcel`, `box`                 |
