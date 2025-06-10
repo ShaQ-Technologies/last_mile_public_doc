@@ -25,14 +25,14 @@ POST /auth/login
 
 Description: Get authentication token for subsequent requests
 
-##### Request Parameters
+#### Request Parameters
 
 | Parameter     | Type     | Description   |
 | :-----------  | :------- | :------------ |
 | `identifier`  | `string` | **required**. |
 | `secret`      | `string` | **required**. |
 
-##### Response
+#### Response
 
 200
 
@@ -53,13 +53,13 @@ GET /packages
 
 Description: Get all packages
 
-##### Headers
+#### Headers
 
 | Parameter       | Type     | Description   |
 | :-------------- | :------- | :------------ |
 | `Authorization` | `bearer` | **Required**. |
 
-##### Response
+#### Response
 
 200
 
@@ -124,13 +124,13 @@ GET /packages/{partnerRef}
 
 Description: Get package details
 
-##### Headers
+#### Headers
 
 | Parameter       | Type     | Description   |
 | :-------------- | :------- | :------------ |
 | `Authorization` | `bearer` | **Required**. |
 
-##### Response
+#### Response
 
 200
 
@@ -202,13 +202,13 @@ DELETE /packages/{partnerRef}
 
 Description: Delete a package. Only pending packages can be deleted
 
-##### Headers
+#### Headers
 
 | Parameter       | Type     | Description   |
 | :-------------- | :------- | :------------ |
 | `Authorization` | `bearer` | **Required**. |
 
-##### Response
+#### Response
 
 200
 
@@ -219,7 +219,6 @@ Description: Delete a package. Only pending packages can be deleted
 }
 ```
 
-
 ### Create Package
 
 ```http
@@ -228,13 +227,13 @@ POST /packages
 
 Description: Create a package for shipment
 
-##### Headers
+#### Headers
 
 | Parameter       | Type     | Description   |
 | :-------------- | :------- | :------------ |
 | `Authorization` | `bearer` | **Required**. |
 
-##### Request Parameters
+#### Request Parameters
 
 | Parameter                     | Type          | Description                                       |
 | :---------------------------- | :------------ | :------------------------------------------------ |
@@ -328,13 +327,13 @@ PATCH /packages/{partnerRef}
 
 Description: Update a specific package
 
-##### Headers
+#### Headers
 
 | Parameter       | Type     | Description   |
 | :-------------- | :------- | :------------ |
 | `Authorization` | `bearer` | **Required**. |
 
-##### Request Parameters
+#### Request Parameters
 
 | Parameter                     | Type          | Description                           |
 | :---------------------------- | :------------ | :------------------------------------ |
@@ -409,7 +408,6 @@ Description: Update a specific package
 }
 ```
 
-
 ### Track Package
 
 ```http
@@ -418,13 +416,13 @@ GET /tracking/{trackingNumber}
 
 Description: Get tracking statuses of a specific package
 
-##### Headers
+#### Headers
 
 | Parameter       | Type     | Description   |
 | :-------------- | :------- | :------------ |
 | `Authorization` | `bearer` | **Required**. |
 
-##### Response
+#### Response
 
 200
 
@@ -466,9 +464,6 @@ Description: Get tracking statuses of a specific package
 }
 ```
 
-
-
-
 ### Get Regions
 
 ```http
@@ -477,13 +472,13 @@ GET /setup/regions
 
 Description: Get all allowable regions
 
-##### Headers
+#### Headers
 
 | Parameter       | Type     | Description   |
 | :-------------- | :------- | :------------ |
 | `Authorization` | `bearer` | **Required**. |
 
-##### Response
+#### Response
 
 200
 
