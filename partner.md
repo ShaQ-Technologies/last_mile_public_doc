@@ -119,7 +119,7 @@ Description: Get all packages
 ### Get single Package
 
 ```http
-GET /package/{partnerRef}
+GET /packages/{partnerRef}
 ```
 
 Description: Get package details
@@ -197,7 +197,7 @@ Description: Get package details
 ### Delete pending Package
 
 ```http
-DELETE /package/{partnerRef}
+DELETE /packages/{partnerRef}
 ```
 
 Description: Delete a package. Only pending packages can be deleted
