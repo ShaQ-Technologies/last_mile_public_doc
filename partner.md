@@ -40,7 +40,7 @@ Description: Get authentication token for subsequent requests
 {
     "message": "Request successful",
     "data": {
-        "token": "pauth_MQ.UUtXdU9HODhjdmtTNkRtUWNsVlM4OWI1d2Z2TXVIanlkRkNWd3dtUTMxNDY5ODMxODk"
+        "token": "UtXdU9HODhjdmtTNkRtUWNsVlM4OWI1d2Z2TXVIanlkRk"
     }
 }
 ```
