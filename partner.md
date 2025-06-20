@@ -27,7 +27,7 @@ Api documentation for ShaQ Express Partners Last Delivery
 
 `assigned` : Package has been assigned to a Rider
 
-`in-transit` : Package is in transit to closest warehouse
+`in_transit` : Package is in transit to closest warehouse
 
 `dispatched` : Package is en-route to deliver
 
