@@ -57,8 +57,6 @@ Api documentation for ShaQ Express Partners Last Delivery
 
 `completed` : Delivery process has been completed
 
-
-
 ## Endpoints
 
 ### Login
