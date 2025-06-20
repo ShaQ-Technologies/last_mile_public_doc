@@ -24,6 +24,8 @@ POST /auth/login
 ```
 
 Description: Get authentication token for subsequent requests
+As a security measure the token is valid for 7 days after which a new one will have to be generated
+using the `/auth/login` route.
 
 #### Request Parameters
 
