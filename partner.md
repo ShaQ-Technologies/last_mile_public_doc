@@ -15,6 +15,50 @@ Api documentation for ShaQ Express Partners Last Delivery
 | Content-Type | `application/json` |
 | Accept       | `application/json` |
 
+## Package Statuses
+
+`pending` : Package is yet to be received from Partner
+
+`shipped` : Package has been shipped by Partner
+
+`confirmed` : Customer has been called and delivery confirmed
+
+`received` : Package has been received from Partner
+
+`assigned` : Package has been assigned to a Rider
+
+`in-transit` : Package is in transit to closest warehouse
+
+`dispatched` : Package is en-route to deliver
+
+`not_delivered` : Attempted delivery but couldn't complete it
+
+`delayed` : Package delivery delayed
+
+`rescheduled` : Package delivery rescheduled for new delivery attempt
+
+`delivered` : Package was successfully delivered to customer
+
+`failed` : Package delivery failed multiple times
+
+`return_in_progress` : Package is en-route back to Partner
+
+`returned_to_sender` : Package has been sent back to Partner
+
+`ready_for_pickup` : Package is ready for customer pickup
+
+`customer_hold` : Delivery on hold based on customer request
+
+`picked_up` : Package has been picked up by customer
+
+`customer_unreachable` : Delivery is on hold because customer is unreachable
+
+`suspected_scam` : Delivery is on hold due to suspected scam
+
+`completed` : Delivery process has been completed
+
+
+
 ## Endpoints
 
 ### Login
@@ -105,7 +149,8 @@ Description: Get all packages
                 "statusDescription": "Package is yet to be received from Partner.",
                 "latitude": "1.3000000",
                 "longitude": "-4.3400000",
-                "dateCreated": "2025-04-10 07:13"
+                "dateCreated": "2025-04-10 07:13",
+                "proofPhotoUrl" : "<image_url>"
             }
         ],
         "meta": {
