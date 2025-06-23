@@ -49,8 +49,6 @@ Api documentation for ShaQ Express Partners Last Delivery
 
 `customer_hold` : Delivery on hold based on customer request
 
-`picked_up` : Package has been picked up by customer
-
 `customer_unreachable` : Delivery is on hold because customer is unreachable
 
 `suspected_scam` : Delivery is on hold due to suspected scam
