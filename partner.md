@@ -319,7 +319,7 @@ Description: Create a package for shipment
     "message": "Package created successfully",
     "data": {
         "id": 1,
-        "partnerRef": "ASFWERTG",
+        "partnerRef": "12345",
         "trackingNumber": "30A19BCC",
         "customerName": "Najib Alhassan",
         "customerPhone1": "0244100200",
@@ -416,7 +416,7 @@ Description: Update a specific package
 {
     "message": "Request successful",
     "data": {
-        "partnerRef": "TEMU567",
+        "partnerRef": "12345",
         "trackingNumber": "20250410X51DIQ",
         "customerName": "Kwaku Ananse",
         "customerPhone1": "+233266100200",
@@ -447,6 +447,76 @@ Description: Update a specific package
                 "name": "pending",
                 "description": "Package is yet to be received from Partner.",
                 "date": "2025-04-10 07:13"
+            }
+        ]
+    }
+}
+```
+
+### Update Package status
+
+```http
+POST /packages/{partnerRef}/update-status
+```
+
+Description: Update the status of a package
+
+#### Headers
+
+| Parameter       | Type     | Description   |
+| :-------------- | :------- | :------------ |
+| `Authorization` | `bearer` | **Required**. |
+
+#### Request Parameters
+
+| Parameter                     | Type          | Description                               |
+| :---------------------------- | :------------ | :---------------------------------------- |
+| `status`                      | `string`      | **required** . in `pending`, `shipped`    |
+
+##### Response
+
+200
+
+```json
+{
+    "message": "Request successful",
+    "data": {
+        "partnerRef": "12345",
+        "trackingNumber": "20250410X51DIQ",
+        "customerName": "Kwaku Ananse",
+        "customerPhone1": "+233266100200",
+        "customerPhone2": "+233255100200",
+        "sourceCountry": "China",
+        "sourceAddressLine1": "Beijing",
+        "sourceAddressLine2": "Hana Province 14th street",
+        "destinationCountry": "Ghana",
+        "destinationRegion": "Ashanti",
+        "destinationCity": "Kumasi",
+        "destinationAddressLine1": "knust",
+        "destinationAddressLine2": "katanga room 4",
+        "length": 31,
+        "height": 20,
+        "weight": 3,
+        "description": "Samsing 16 pro max black edge silver back casing",
+        "units": 1,
+        "type": "box",
+        "handling": "normal",
+        "hasLabel": true,
+        "status": "pending",
+        "statusDescription": "Package is yet to be received from Partner.",
+        "latitude": 1.3,
+        "longitude": -4.34,
+        "dateCreated": "2025-04-10 07:13",
+        "trackingHistory": [
+            {
+                "name": "pending",
+                "description": "Package is yet to be received from Partner.",
+                "date": "2025-04-10 07:13"
+            },
+            {
+                "name": "shipped",
+                "description": "Package has been shipped by Partner.",
+                "date": "2025-05-02 10:25"
             }
         ]
     }
