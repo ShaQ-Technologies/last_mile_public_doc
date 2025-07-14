@@ -53,8 +53,6 @@ Api documentation for ShaQ Express Partners Last Delivery
 
 `suspected_scam` : Delivery is on hold due to suspected scam
 
-`completed` : Delivery process has been completed
-
 ## Endpoints
 
 ### Login
