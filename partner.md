@@ -88,7 +88,7 @@ using the `/auth/login` route.
 ### Get Packages
 
 ```http
-GET /packages
+GET /packages?page=1&limit=1
 ```
 
 Description: Get all packages
@@ -112,39 +112,79 @@ Description: Get all packages
                 "partnerRef": "FGVHKJ567",
                 "trackingNumber": "20250410X51DIQ",
                 "customerName": "Kwaku Ananse",
-                "customerPhone1": "+233266100200",
-                "customerPhone2": "+233255100200",
+                "customerPhone1": "+233244100200",
+                "customerPhone2": null,
                 "sourceCountry": "Ghana",
-                "sourceAddressLine1": "Accra",
-                "sourceAddressLine2": "East Legon",
+                "sourceAddressLine1": "Accra Spintex",
+                "sourceAddressLine2": null,
                 "destinationCountry": "Ghana",
                 "destinationRegion": "Greater Accra",
                 "destinationCity": "Accra",
                 "destinationAddressLine1": "UPSA Hall, Room 3",
-                "destinationAddressLine2": "",
+                "destinationAddressLine2": null,
                 "destinationPostalCode": null,
-                "length": 31,
-                "height": 20,
-                "weight": 3,
+                "length": 0,
+                "height": 5,
+                "weight": 1.2,
                 "description": "iPhone 16 pro max black edge silver back casing",
+                "labelUrl": "https://debtufr1vwh35.cloudfront.net/labels_test/label/8B73CE6D.png",
                 "units": 1,
                 "type": "box",
-                "value": 5000,
+                "value": "300.00",
+                "handling": "normal",
+                "specialInstructions": null,
+                "status": "pending",
+                "statusDescription": "Package is yet to be received from Partner.",
+                "latitude": null,
+                "longitude": null,
+                "dateCreated": "2025-04-10 11:15",
+                "items": [
+                    {
+                        "name" : "iPhone 6",
+                        "quantity" : 1,
+                    },
+                    {
+                        "name" : "iPhone 14 Pro",
+                        "quantity" : 2,
+                    }
+                ]
+            },
+            {
+                "partnerRef": "FGVHKJ567",
+                "trackingNumber": "20250410X51DIQ",
+                "customerName": "Kwaku Ananse",
+                "customerPhone1": "+233244100200",
+                "customerPhone2": null,
+                "sourceCountry": "Ghana",
+                "sourceAddressLine1": "Accra Spintex",
+                "sourceAddressLine2": null,
+                "destinationCountry": "Ghana",
+                "destinationRegion": "Greater Accra",
+                "destinationCity": "Accra",
+                "destinationAddressLine1": "UPSA Hall, Room 3",
+                "destinationAddressLine2": null,
+                "destinationPostalCode": null,
+                "length": 0,
+                "height": 5,
+                "weight": 1.2,
+                "description": "iPhone 16 pro max black edge silver back casing",
+                "labelUrl": "https://debtufr1vwh35.cloudfront.net/labels_test/label/8B73CE6D.png",
+                "units": 1,
+                "type": "box",
+                "value": "300.00",
+                "handling": "normal",
+                "specialInstructions": null,
+                "status": "pending",
+                "statusDescription": "Package is yet to be received from Partner.",
+                "latitude": null,
+                "longitude": null,
+                "dateCreated": "2025-04-10 11:15",
                 "items": [
                     {
                         "name" : "iPhone 6",
                         "quantity" : 1,
                     }
-                ],
-                "handling": "normal",
-                "specialInstructions": null,
-                "hasLabel": true,
-                "status": "pending",
-                "statusDescription": "Package is yet to be received from Partner.",
-                "latitude": "1.3000000",
-                "longitude": "-4.3400000",
-                "dateCreated": "2025-04-10 07:13",
-                "proofPhotoUrl" : "<image_url>"
+                ]
             }
         ],
         "meta": {
@@ -185,50 +225,69 @@ Description: Get package details
         "customerPhone1": "+233244100200",
         "customerPhone2": null,
         "sourceCountry": "Ghana",
-        "sourceAddressLine1": "Accra",
-        "sourceAddressLine2": "East Legon",
+        "sourceAddressLine1": "Accra Spintex",
+        "sourceAddressLine2": null,
         "destinationCountry": "Ghana",
         "destinationRegion": "Greater Accra",
         "destinationCity": "Accra",
         "destinationAddressLine1": "UPSA Hall, Room 3",
-        "destinationAddressLine2": "",
+        "destinationAddressLine2": null,
         "destinationPostalCode": null,
-        "length": 31,
-        "height": 20,
-        "weight": 3,
+        "length": 0,
+        "height": 5,
+        "weight": 1.2,
         "description": "iPhone 16 pro max black edge silver back casing",
+        "labelUrl": "https://debtufr1vwh35.cloudfront.net/labels_test/label/8B73CE6D.png",
         "units": 1,
         "type": "box",
-        "value": 5000,
+        "value": "300.00",
+        "handling": "normal",
+        "specialInstructions": null,
+        "status": "not_delivered",
+        "statusDescription": "Attempted delivery but couldn't complete it.",
+        "latitude": null,
+        "longitude": null,
+        "dateCreated": "2025-04-10 11:15",
         "items": [
             {
                 "name" : "iPhone 6",
                 "quantity" : 1,
+            },
+            {
+                "name" : "iPhone 14 Pro",
+                "quantity" : 2,
             }
         ],
-        "handling": "normal",
-        "specialInstructions": null,
-        "hasLabel": true,
-        "status": "pending",
-        "statusDescription": "Package is yet to be received from Partner.",
-        "latitude": null,
-        "longitude": null,
-        "dateCreated": "2025-04-10 11:15",
-        "trackingHistory": [
+         "trackingHistory": [
             {
-                "name": "processing",
-                "description": "Package is being sorted, scanned, and prepared for dispatch",
-                "date": "2025-04-11 12:00"
+                "name": "not_delivered",
+                "description": "Attempted delivery but couldn't complete it.",
+                "date": "2025-07-16 09:00",
+                "comment": "Customer was unreachable upon arrival. Package rescheduled for 2nd delivery attempt."
+            },
+            {
+                "name": "dispatched",
+                "description": "Package is en-route to deliver.",
+                "date": "2025-07-15 15:45",
+                "comment": null
+            },
+            {
+                "name": "confirmed",
+                "description": "Customer has been called and delivery confirmed.",
+                "date": "2025-07-15 15:45",
+                "comment": null
             },
             {
                 "name": "received",
-                "description": "Package received from Partner",
-                "date": "2025-04-11 09:10"
+                "description": "Package has been received from Partner.",
+                "date": "2025-07-15 15:38",
+                "comment": null
             },
             {
                 "name": "pending",
-                "description": "Package is yet to be received from Partner.",
-                "date": "2025-04-10 11:15"
+                "description": "Package is yet to be received by Partner.",
+                "date": "2025-07-14 10:38",
+                "comment": null
             }
         ]
     }
@@ -314,46 +373,51 @@ Description: Create a package for shipment
 {
     "message": "Package created successfully",
     "data": {
-        "id": 1,
-        "partnerRef": "12345",
-        "trackingNumber": "30A19BCC",
-        "customerName": "Najib Alhassan",
-        "customerPhone1": "0244100200",
+        "partnerRef": "FGVHKJ567",
+        "trackingNumber": "20250410X51DIQ",
+        "customerName": "Kwaku Ananse",
+        "customerPhone1": "+233244100200",
         "customerPhone2": null,
         "sourceCountry": "Ghana",
-        "sourceAddressLine1": "Accra, Ghana",
+        "sourceAddressLine1": "Accra Spintex",
         "sourceAddressLine2": null,
         "destinationCountry": "Ghana",
-        "destinationRegion": "Western",
-        "destinationCity": "Madina",
-        "destinationAddressLine1": "Jerusalem Street, Old Road",
+        "destinationRegion": "Greater Accra",
+        "destinationCity": "Accra",
+        "destinationAddressLine1": "UPSA Hall, Room 3",
         "destinationAddressLine2": null,
         "destinationPostalCode": null,
-        "length": 3,
-        "height": 1,
-        "weight": 0.4,
-        "description": "Lorem Ipsum",
+        "length": 0,
+        "height": 5,
+        "weight": 1.2,
+        "description": "iPhone 16 pro max black edge silver back casing",
+        "labelUrl": null,
         "units": 1,
-        "type": "parcel",
-        "handling": "fragile",
+        "type": "box",
+        "value": "300.00",
+        "handling": "normal",
         "specialInstructions": null,
-        "hasLabel": false,
         "status": "pending",
-        "statusDescription": "Package is yet to be processed by Partner.",
+        "statusDescription": "Package is yet to be received from Partner.",
         "latitude": null,
         "longitude": null,
-        "landmark": null,
-        "region": {
-            "id": 2,
-            "name": "Western"
-        },
-        "rider": null,
-        "dateCreated": "2025-06-05 11:11",
-        "trackingHistory": [
+        "dateCreated": "2025-04-10 11:15",
+        "items": [
+            {
+                "name" : "iPhone 6",
+                "quantity" : 1,
+            },
+            {
+                "name" : "iPhone 14 Pro",
+                "quantity" : 2,
+            }
+        ],
+         "trackingHistory": [
             {
                 "name": "pending",
-                "description": "Package is yet to be processed by Partner.",
-                "date": "2025-06-05 11:11"
+                "description": "Package is yet to be received by Partner.",
+                "date": "2025-07-14 10:38",
+                "comment": null
             }
         ]
     }
@@ -477,42 +541,75 @@ Description: Update the status of a package
 {
     "message": "Request successful",
     "data": {
-        "partnerRef": "12345",
+        "partnerRef": "FGVHKJ567",
         "trackingNumber": "20250410X51DIQ",
         "customerName": "Kwaku Ananse",
-        "customerPhone1": "+233266100200",
-        "customerPhone2": "+233255100200",
-        "sourceCountry": "China",
-        "sourceAddressLine1": "Beijing",
-        "sourceAddressLine2": "Hana Province 14th street",
+        "customerPhone1": "+233244100200",
+        "customerPhone2": null,
+        "sourceCountry": "Ghana",
+        "sourceAddressLine1": "Accra Spintex",
+        "sourceAddressLine2": null,
         "destinationCountry": "Ghana",
-        "destinationRegion": "Ashanti",
-        "destinationCity": "Kumasi",
-        "destinationAddressLine1": "knust",
-        "destinationAddressLine2": "katanga room 4",
-        "length": 31,
-        "height": 20,
-        "weight": 3,
-        "description": "Samsing 16 pro max black edge silver back casing",
+        "destinationRegion": "Greater Accra",
+        "destinationCity": "Accra",
+        "destinationAddressLine1": "UPSA Hall, Room 3",
+        "destinationAddressLine2": null,
+        "destinationPostalCode": null,
+        "length": 0,
+        "height": 5,
+        "weight": 1.2,
+        "description": "iPhone 16 pro max black edge silver back casing",
+        "labelUrl": "https://debtufr1vwh35.cloudfront.net/labels_test/label/8B73CE6D.png",
         "units": 1,
         "type": "box",
+        "value": "300.00",
         "handling": "normal",
-        "hasLabel": true,
-        "status": "pending",
-        "statusDescription": "Package is yet to be received from Partner.",
-        "latitude": 1.3,
-        "longitude": -4.34,
-        "dateCreated": "2025-04-10 07:13",
-        "trackingHistory": [
+        "specialInstructions": null,
+        "status": "not_delivered",
+        "statusDescription": "Attempted delivery but couldn't complete it.",
+        "latitude": null,
+        "longitude": null,
+        "dateCreated": "2025-04-10 11:15",
+        "items": [
             {
-                "name": "pending",
-                "description": "Package is yet to be received from Partner.",
-                "date": "2025-04-10 07:13"
+                "name" : "iPhone 6",
+                "quantity" : 1,
             },
             {
-                "name": "shipped",
-                "description": "Package has been shipped by Partner.",
-                "date": "2025-05-02 10:25"
+                "name" : "iPhone 14 Pro",
+                "quantity" : 2,
+            }
+        ],
+         "trackingHistory": [
+            {
+                "name": "not_delivered",
+                "description": "Attempted delivery but couldn't complete it.",
+                "date": "2025-07-16 09:00",
+                "comment": "Customer was unreachable upon arrival. Package rescheduled for 2nd delivery attempt."
+            },
+            {
+                "name": "dispatched",
+                "description": "Package is en-route to deliver.",
+                "date": "2025-07-15 15:45",
+                "comment": null
+            },
+            {
+                "name": "confirmed",
+                "description": "Customer has been called and delivery confirmed.",
+                "date": "2025-07-15 15:45",
+                "comment": null
+            },
+            {
+                "name": "received",
+                "description": "Package has been received from Partner.",
+                "date": "2025-07-15 15:38",
+                "comment": null
+            },
+            {
+                "name": "pending",
+                "description": "Package is yet to be received by Partner.",
+                "date": "2025-07-14 10:38",
+                "comment": null
             }
         ]
     }
