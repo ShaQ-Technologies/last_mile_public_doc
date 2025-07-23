@@ -33,8 +33,6 @@ Api documentation for ShaQ Express Partners Last Delivery
 
 `not_delivered` : Attempted delivery but couldn't complete it
 
-`delayed` : Package delivery delayed
-
 `rescheduled` : Package delivery rescheduled for new delivery attempt
 
 `delivered` : Package was successfully delivered to customer
