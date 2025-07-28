@@ -131,10 +131,11 @@ Description: Get all packages
                 "value": "300.00",
                 "handling": "normal",
                 "specialInstructions": null,
-                "status": "pending",
-                "statusDescription": "Package is yet to be received from Partner.",
+                "status": "delivered",
+                "statusDescription": "Package was successfully delivered to customer",
                 "latitude": null,
                 "longitude": null,
+                "proofPhotoUrl": "https://debtufr1vwh35.cloudfront.net/labels_test/label/8B73CE6D.png",
                 "dateCreated": "2025-04-10 11:15",
                 "items": [
                     {
@@ -176,6 +177,7 @@ Description: Get all packages
                 "statusDescription": "Package is yet to be received from Partner.",
                 "latitude": null,
                 "longitude": null,
+                "proofPhotoUrl": null,
                 "dateCreated": "2025-04-10 11:15",
                 "items": [
                     {
@@ -245,6 +247,7 @@ Description: Get package details
         "statusDescription": "Attempted delivery but couldn't complete it.",
         "latitude": null,
         "longitude": null,
+        "proofPhotoUrl": "https://debtufr1vwh35.cloudfront.net/labels_test/label/8B73CE6D.png",
         "dateCreated": "2025-04-10 11:15",
         "items": [
             {
@@ -499,6 +502,7 @@ Description: Update a specific package
         "statusDescription": "Package is yet to be received from Partner.",
         "latitude": 1.3,
         "longitude": -4.34,
+        "proofPhotoUrl": null,
         "dateCreated": "2025-04-10 07:13",
         "trackingHistory": [
             {
