@@ -707,3 +707,110 @@ Description: Get all allowable regions
     ]
 }
 ```
+
+
+### Create Package Replacement
+
+```http
+POST /packages/{partnerRef}/replacement
+```
+
+Description: Create a package to replace an old package where `partnerRef` is the partnerRef of the package being replaced
+
+#### Headers
+
+| Parameter       | Type     | Description   |
+| :-------------- | :------- | :------------ |
+| `Authorization` | `bearer` | **Required**. |
+
+#### Request Parameters
+
+| Parameter                     | Type          | Description                                       |
+| :---------------------------- | :------------ | :------------------------------------------------ |
+| `partner_ref`                 | `string`      | **required**.                                     |
+| `customer_name`               | `string`      | **required**.                                     |
+| `customer_phone_1`            | `string`      | **required**.                                     |
+| `customer_phone_2`            | `string`      | **optional**.                                     |
+| `source_country_iso2`         | `string`      | **required**.                                     |
+| `source_address_line_1`       | `string`      | **required**.                                     |
+| `source_address_line_2`       | `string`      | **optional**.                                     |
+| `destination_country_iso2`    | `string`      | **required**.                                     |
+| `destination_region`          | `string`      | **required if `region_id` is empty**.             |
+| `destination_city`            | `string`      | **required**.                                     |
+| `destination_address_line_1`  | `string`      | **required**.                                     |
+| `destination_address_line_2`  | `string`      | **optional**.                                     |
+| `destination_postal_code`     | `string`      | **optional**.                                     |
+| `length`                      | `decimal`     | **optional**.                                     |
+| `height`                      | `decimal`     | **optional**.                                     |
+| `weight`                      | `decimal`     | **optional**.                                     |
+| `description`                 | `string`      | **required**.                                     |
+| `units`                       | `string`      | **required**.                                     |
+| `type`                        | `string`      | **required** . in `parcel`, `box`                 |
+| `handling`                    | `string`      | **required** . in `normal`, `fragile`             |
+| `special_instructions`        | `string`      | **optional**.                                     |
+| `latitude`                    | `decimal`     | **optional**.                                     |
+| `longitude`                   | `decimal`     | **optional**.                                     |
+| `value`                       | `decimal`     | **required**.                                     |
+| `items`                       | `array`       | **required**. {name, quantity}                    |
+| `include_label`               | `boolean`     | **optional**.   default `false`                   |
+| `region_id`                   | `integer`     | **required if `destination_region` is empty**.    |
+
+##### Response
+
+200
+
+```json
+{
+    "message": "Package created successfully",
+    "data": {
+        "partnerRef": "FGVHKJ567",
+        "trackingNumber": "20250410X51DIQ",
+        "customerName": "Kwaku Ananse",
+        "customerPhone1": "+233244100200",
+        "customerPhone2": null,
+        "sourceCountry": "Ghana",
+        "sourceAddressLine1": "Accra Spintex",
+        "sourceAddressLine2": null,
+        "destinationCountry": "Ghana",
+        "destinationRegion": "Greater Accra",
+        "destinationCity": "Accra",
+        "destinationAddressLine1": "UPSA Hall, Room 3",
+        "destinationAddressLine2": null,
+        "destinationPostalCode": null,
+        "length": 0,
+        "height": 5,
+        "weight": 1.2,
+        "description": "iPhone 16 pro max black edge silver back casing",
+        "labelUrl": null,
+        "units": 1,
+        "type": "box",
+        "value": "300.00",
+        "handling": "normal",
+        "specialInstructions": null,
+        "status": "pending",
+        "statusDescription": "Package is yet to be received from Partner.",
+        "latitude": null,
+        "longitude": null,
+        "dateCreated": "2025-04-10 11:15",
+        "items": [
+            {
+                "name" : "iPhone 6",
+                "quantity" : 1,
+            },
+            {
+                "name" : "iPhone 14 Pro",
+                "quantity" : 2,
+            }
+        ],
+         "trackingHistory": [
+            {
+                "name": "pending",
+                "description": "Package is yet to be received by Partner.",
+                "date": "2025-07-14 10:38",
+                "comment": null
+            }
+        ]
+    }
+}
+```
+
