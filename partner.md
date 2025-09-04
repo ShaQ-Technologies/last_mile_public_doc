@@ -51,6 +51,8 @@ Api documentation for ShaQ Express Partners Last Delivery
 
 `suspected_scam` : Delivery is on hold due to suspected scam
 
+`return_home` : Package is being returned to ShaQ Express main warehouse after multiple unsuccessful delivery
+
 ## Endpoints
 
 ### Login
@@ -707,4 +709,3 @@ Description: Get all allowable regions
     ]
 }
 ```
-
