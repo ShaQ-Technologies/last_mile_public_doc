@@ -19,7 +19,7 @@ Api documentation for ShaQ Express Partners Last Delivery
 ### Passport Import
 
 ```http
-POST /passports/import
+POST /passports/upload-manifest
 ```
 
 Description: Import excel sheet containing passport data
@@ -29,6 +29,29 @@ Description: Import excel sheet containing passport data
 | Parameter | Type   | Description   |
 | :-------- | :----- | :------------ |
 | `file`    | `file` | **required**. |
+
+#### Expected Excel Columns Structure
+ - batch_reference
+ - application_id
+ - application_type
+ - application_center
+ - passport_number
+ - issued_date
+ - surname
+ - firstname
+ - othernames
+ - phone
+ - email
+ - city
+ - suburb
+ - street
+ - postal_address
+ - digital_address
+ - referenc_id
+ - national_id
+
+ >Note: Columns should be structured in the order listed with no heading
+
 
 #### Response
 
@@ -41,7 +64,7 @@ Description: Import excel sheet containing passport data
 }
 ```
 
-## Callback Request
+## Callback Requests
 
 ### Import Update
 
