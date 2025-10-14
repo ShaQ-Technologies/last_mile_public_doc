@@ -709,3 +709,110 @@ Description: Get all allowable regions
     ]
 }
 ```
+
+
+
+### Create Package Replacement
+
+```http
+POST /packages/replacement
+```
+
+Description: Create a package to replace an existing package 
+
+#### Headers
+
+| Parameter       | Type     | Description   |
+| :-------------- | :------- | :------------ |
+| `Authorization` | `bearer` | **Required**. |
+
+#### Request Parameters
+
+| Parameter                     | Type          | Description                                       |
+| :---------------------------- | :------------ | :------------------------------------------------ |
+| `replacement_type`            | `string`      | **required**. in `end`, `send`, `full`            |
+| `previous_order_id`           | `string`      | **required**.                                     |
+| `partner_ref`                 | `string`      | **required**.                                     |
+| `customer_name`               | `string`      | **required**.                                     |
+| `customer_phone_1`            | `string`      | **required**.                                     |
+| `customer_phone_2`            | `string`      | **optional**.                                     |
+| `source_country_iso2`         | `string`      | **required**.                                     |
+| `source_address_line_1`       | `string`      | **required**.                                     |
+| `source_address_line_2`       | `string`      | **optional**.                                     |
+| `destination_country_iso2`    | `string`      | **required**.                                     |
+| `destination_region`          | `string`      | **required if `region_id` is empty**.             |
+| `destination_city`            | `string`      | **required**.                                     |
+| `destination_address_line_1`  | `string`      | **required**.                                     |
+| `destination_address_line_2`  | `string`      | **optional**.                                     |
+| `destination_postal_code`     | `string`      | **optional**.                                     |
+| `length`                      | `decimal`     | **optional**.                                     |
+| `height`                      | `decimal`     | **optional**.                                     |
+| `weight`                      | `decimal`     | **optional**.                                     |
+| `description`                 | `string`      | **required**.                                     |
+| `units`                       | `string`      | **required**.                                     |
+| `type`                        | `string`      | **required** . in `parcel`, `box`                 |
+| `handling`                    | `string`      | **required** . in `normal`, `fragile`             |
+| `special_instructions`        | `string`      | **optional**.                                     |
+| `latitude`                    | `decimal`     | **optional**.                                     |
+| `longitude`                   | `decimal`     | **optional**.                                     |
+| `value`                       | `decimal`     | **required**.                                     |
+| `items`                       | `array`       | **required**. {name, quantity}                    |
+| `include_label`               | `boolean`     | **optional**.   default `false`                   |
+| `region_id`                   | `integer`     | **required if `destination_region` is empty**.    |
+
+##### Response
+
+200
+
+```json
+{
+    "message": "Package created successfully",
+    "data": {
+        "partnerRef": "PARTNER_0213",
+        "trackingNumber": "CDE5D3E0",
+        "customerName": "Derrick Amega",
+        "customerPhone1": "+233549632604",
+        "customerPhone2": null,
+        "sourceCountry": "Ghana",
+        "sourceAddressLine1": "21 Abiriw Street",
+        "sourceAddressLine2": null,
+        "destinationCountry": "Ghana",
+        "destinationRegion": "Greater Accra",
+        "destinationCity": "Kwashieman",
+        "destinationAddressLine1": "23 Abiriw Street",
+        "destinationAddressLine2": null,
+        "destinationPostalCode": null,
+        "length": 30,
+        "height": 20,
+        "weight": 5.5,
+        "description": "Test package",
+        "labelUrl": null,
+        "units": 1,
+        "type": "box",
+        "value": 20,
+        "handling": "normal",
+        "specialInstructions": null,
+        "status": "pending",
+        "statusDescription": "Package is yet to be received by Partner",
+        "latitude": null,
+        "longitude": null,
+        "dateCreated": "2025-10-14 10:54",
+        "items": [
+            {
+                "name": "Bluetooth",
+                "quantity": 3
+            }
+        ],
+        "replacementType": null,
+        "previous_order_id": null,
+        "trackingHistory": [
+            {
+                "name": "pending",
+                "description": "Package is yet to be received by Partner",
+                "date": "2025-10-14 10:54",
+                "comment": null
+            }
+        ]
+    }
+}
+```
