@@ -261,6 +261,8 @@ Description: Get package details
                 "quantity" : 2,
             }
         ],
+        "replacementType": "end",
+        "previousOrderId": 411968,
          "trackingHistory": [
             {
                 "name": "not_delivered",
@@ -803,8 +805,8 @@ Description: Create a package to replace an existing package
                 "quantity": 3
             }
         ],
-        "replacementType": null,
-        "previousOrderId": null,
+        "replacementType": "end",
+        "previousOrderId": 411968,
         "trackingHistory": [
             {
                 "name": "pending",
