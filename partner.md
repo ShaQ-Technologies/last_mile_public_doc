@@ -804,7 +804,7 @@ Description: Create a package to replace an existing package
             }
         ],
         "replacementType": null,
-        "previous_order_id": null,
+        "previousOrderId": null,
         "trackingHistory": [
             {
                 "name": "pending",
