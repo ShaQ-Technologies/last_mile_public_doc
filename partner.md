@@ -720,7 +720,7 @@ Description: Get all allowable regions
 POST /packages/replacement
 ```
 
-Description: Create a package to replace an existing package 
+Description: Create a package to replace an existing package
 
 #### Headers
 
@@ -732,9 +732,9 @@ Description: Create a package to replace an existing package
 
 | Parameter                     | Type          | Description                                       |
 | :---------------------------- | :------------ | :------------------------------------------------ |
-| `replacement_type`            | `string`      | **required**. in `end`, `send`, `full`            |
-| `previous_order_id`           | `string`      | **required**.                                     |
 | `partner_ref`                 | `string`      | **required**.                                     |
+| `previous_order_id`           | `string`      | **required**.                                     |
+| `replacement_type`            | `string`      | **required**. in `end`, `send`, `full`            |
 | `customer_name`               | `string`      | **required**.                                     |
 | `customer_phone_1`            | `string`      | **required**.                                     |
 | `customer_phone_2`            | `string`      | **optional**.                                     |
