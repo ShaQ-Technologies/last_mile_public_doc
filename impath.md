@@ -86,60 +86,28 @@ Description: Get passport details
 {
     "message": "Request successful",
     "data": {
-        "id": 7540,
-        "partnerRef": "25KQK5JMJIN9W29",
-        "trackingNumber": "2A48376C",
-        "customerName": "Kwaku Ananse",
-        "customerPhone1": "+233208765432",
-        "customerPhone2": null,
-        "sourceCountry": "Ghana",
-        "sourceAddressLine1": "No. 5 Agostinho Neto Rd, Liberation Avenue, Airport Residential Area, Accra, Ghana",
-        "sourceAddressLine2": null,
-        "destinationCountry": "Ghana",
-        "destinationRegion": "Greater Accra",
-        "destinationCity": "Tema",
-        "destinationAddressLine1": "Meridian Road, Block 12",
-        "destinationAddressLine2": null,
-        "destinationPostalCode": null,
-        "length": 0,
-        "height": 0,
-        "weight": 0,
-        "description": null,
-        "labelUrl": null,
-        "units": 1,
-        "type": "parcel",
-        "handling": "fragile",
-        "specialInstructions": null,
-        "hasLabel": false,
+        "batchNumber": "304F77G234556",
+        "applicationId": "25RXR2QTQPU6D96",
+        "applicationType": "Regular32",
+        "issuedDate": "2024-01-15T00:00:00.000Z",
+        "customerName": "Kwame Mensah",
+        "phone": "+233244123456/+233549632604",
+        "city": "Accra",
+        "street": "Liberation Road, House No. 23",
+        "suburb": "East Legon",
+        "postalAddress": "P.O. Box 1234, Accra",
+        "reference": "REF-2024-001",
+        "nationalId": "GHA-123456789-0",
         "status": "pending",
         "statusDescription": "Package is yet to be received by Partner",
-        "latitude": null,
-        "longitude": null,
-        "landmark": "",
-        "newRegion": null,
-        "rider": null,
-        "proofPhotoUrl": null,
-        "partner": "MOFA",
-        "assignedCompany": null,
-        "items": [
-            {
-                "name": "Passport",
-                "quantity": 1
-            }
-        ],
-        "scheduleDate": "2025-11-26 14:22",
-        "deliveryFee": "0.00",
-        "value": "0.00",
-        "date": "2025-11-26 14:25",
-        "isCompleted": false,
-        "hasChangedLocation": false,
+        "dateCreated": "2025-11-26 14:22",
         "trackingHistory": [
             {
                 "name": "pending",
                 "description": "Package is yet to be received by Partner",
-                "comment": null,
-                "date": "2025-11-26T14:25:07.000+00:00"
-            },
+                "date": "2025-11-26 14:25",
+                "comment": null
+            }
         ]
     }
 }
