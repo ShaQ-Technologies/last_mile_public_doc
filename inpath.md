@@ -1,6 +1,6 @@
 # General
 
-Api documentation for ShaQ Express Partners Last Delivery
+Api documentation for ShaQ Express Partners Last Mile Delivery
 
 |              |                                               |
 | :----------- | :-------------------------------------------- |
