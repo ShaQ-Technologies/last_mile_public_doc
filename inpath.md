@@ -98,8 +98,9 @@ Description: Get passport details
         "postalAddress": "P.O. Box 1234, Accra",
         "reference": "REF-2024-001",
         "nationalId": "GHA-123456789-0",
-        "status": "pending",
-        "statusDescription": "Package is yet to be received by Partner",
+        "status": "received",
+        "statusDescription": "Package has been received from Partner",
+        "statusMap": "RCV",
         "dateCreated": "2025-11-26 14:22",
         "trackingHistory": [
             {
