@@ -1,6 +1,6 @@
 # General
 
-Api documentation for ShaQ Express Partners Last Mile Delivery
+Api documentation for ShaQ Express Partners Passport Delivery integration with Central Delivery System (InPath)
 
 |              |                                               |
 | :----------- | :-------------------------------------------- |
