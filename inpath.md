@@ -16,6 +16,37 @@ Api documentation for ShaQ Express Partners Passport Delivery integration with C
 
 ## Endpoints
 
+### Login
+
+```http
+POST /auth/login
+```
+
+Description: Get authentication token for subsequent requests
+As a security measure the token is valid for 7 days after which a new one will have to be generated
+using the `/auth/login` route.
+
+#### Request Parameters
+
+| Parameter     | Type     | Description   |
+| :-----------  | :------- | :------------ |
+| `identifier`  | `string` | **required**. |
+| `secret`      | `string` | **required**. |
+
+#### Response
+
+200
+
+```json
+{
+    "message": "Request successful",
+    "data": {
+        "token": "UtXdU9HODhjdmtTNkRtUWNsVlM4OWI1d2Z2TXVIanlkRk"
+    }
+}
+```
+
+
 ### Create Passports
 
 ```http
