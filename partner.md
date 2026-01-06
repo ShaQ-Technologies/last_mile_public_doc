@@ -447,6 +447,7 @@ Description: Update a specific package
 
 | Parameter                     | Type          | Description                           |
 | :---------------------------- | :------------ | :------------------------------------ |
+| `tracking_number`             | `string`      | **optional**.                         |
 | `customer_name`               | `string`      | **optional**.                         |
 | `customer_phone_1`            | `string`      | **optional**.                         |
 | `customer_phone_2`            | `string`      | **optional**.                         |
@@ -815,6 +816,38 @@ Description: Create a package to replace an existing package
                 "comment": null
             }
         ]
+    }
+}
+```
+
+### Receive Package Status Updates Through Webhook
+
+```http
+POST /YOUR_WEBHOOK_URL
+```
+
+Description: We will send package status updates to your webhook
+
+#### Request Parameters
+
+| Parameter                     | Type          | Description                                       |
+| :---------------------------- | :------------ | :------------------------------------------------ |
+| `partner_ref`                 | `string`      | **required**.                                     |
+| `tracking_number`             | `string`      | **required**.                                     |
+| `status`                      | `string`      | **required**.                                     |
+| `description`                 | `string`      | **required**.                                     |
+| `comment`                     | `string`      | **optional**.                                     |
+| `date`                        | `string`      | **optional**.                                     |
+
+##### Response
+
+200
+
+```json
+{
+    "message": "",
+    "data": {
+        "status": "OK"
     }
 }
 ```
