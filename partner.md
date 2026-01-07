@@ -837,7 +837,7 @@ Description: We will send package status updates to your webhook
 | `status`                      | `string`      |                                           |
 | `description`                 | `string`      |                                           |
 | `comment`                     | `string`      |                                           |
-| `date`                        | `string`      | **Format**. = yyyy-mm-dd HH:mm:ss (UTC)   |
+| `date`                        | `string`      | format : yyyy-mm-dd HH:mm:ss (UTC)        |
 
 ##### Expected Response
 
