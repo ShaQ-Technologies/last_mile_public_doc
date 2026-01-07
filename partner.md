@@ -830,16 +830,16 @@ Description: We will send package status updates to your webhook
 
 #### Request Parameters
 
-| Parameter                     | Type          | Description                                       |
-| :---------------------------- | :------------ | :------------------------------------------------ |
-| `partner_ref`                 | `string`      | **required**.                                     |
-| `tracking_number`             | `string`      | **required**.                                     |
-| `status`                      | `string`      | **required**.                                     |
-| `description`                 | `string`      | **required**.                                     |
-| `comment`                     | `string`      | **optional**.                                     |
-| `date`                        | `string`      | **optional**.                                     |
+| Parameter                     | Type          | Description                               |
+| :---------------------------- | :------------ | :---------------------------------------- |
+| `partner_ref`                 | `string`      |                                           |
+| `tracking_number`             | `string`      |                                           |
+| `status`                      | `string`      |                                           |
+| `description`                 | `string`      |                                           |
+| `comment`                     | `string`      |                                           |
+| `date`                        | `string`      | **Format**. = yyyy-mm-dd HH:mm:ss (UTC)   |
 
-##### Response
+##### Expected Response
 
 200
 
