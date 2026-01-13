@@ -342,6 +342,7 @@ Description: Create a package for shipment
 
 | Parameter                     | Type          | Description                                       |
 | :---------------------------- | :------------ | :------------------------------------------------ |
+| `tracking_number`             | `string`      | **optional**.                                     |
 | `partner_ref`                 | `string`      | **required**.                                     |
 | `customer_name`               | `string`      | **required**.                                     |
 | `customer_phone_1`            | `string`      | **required**.                                     |
