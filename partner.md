@@ -449,7 +449,6 @@ Description: Create multiple packages for shipment
 | Parameter                                | Type          | Description                                       |
 | :--------------------------------------- | :------------ | :------------------------------------------------ |
 | `packages`                               | `array`       | **required**.                                     |
-| `packages.*.tracking_number`             | `string`      | **optional**.                                     |
 | `packages.*.partner_ref`                 | `string`      | **required**.                                     |
 | `packages.*.customer_name`               | `string`      | **required**.                                     |
 | `packages.*.customer_phone_1`            | `string`      | **required**.                                     |
@@ -475,7 +474,6 @@ Description: Create multiple packages for shipment
 | `packages.*.longitude`                   | `decimal`     | **optional**.                                     |
 | `packages.*.value`                       | `decimal`     | **required**.                                     |
 | `packages.*.items`                       | `array`       | **required**. {name, quantity}                    |
-| `packages.*.include_label`               | `boolean`     | **optional**.   default `false`                   |
 | `packages.*.region_id`                   | `integer`     | **required if `destination_region` is empty**.    |
 
 ##### Response
