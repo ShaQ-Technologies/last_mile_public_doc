@@ -324,7 +324,7 @@ Description: Delete a package. Only pending packages can be deleted
 }
 ```
 
-### Create Package
+<!-- ### Create Package
 
 ```http
 POST /packages
@@ -428,7 +428,7 @@ Description: Create a package for shipment
         ]
     }
 }
-```
+``` -->
 
 ### Create Packages
 
