@@ -324,13 +324,13 @@ Description: Delete a package. Only pending packages can be deleted
 }
 ```
 
-### Create Package
+### Create Single Package
 
 ```http
 POST /packages
 ```
 
-Description: Create a package for shipment
+Description: Create a package
 
 #### Headers
 
@@ -430,13 +430,13 @@ Description: Create a package for shipment
 }
 ```
 
-### Create Shipments
+### Create Bulk Packages
 
 ```http
-POST /packages/import
+POST /packages/bulk
 ```
 
-Description: Create multiple packages for shipment
+Description: Create multiple packages
 
 #### Headers
 
@@ -484,6 +484,64 @@ Description: Create multiple packages for shipment
 ```json
 {
     "message": "Packages created successfully",
+    "data": null
+}
+```
+
+### Create Shipment
+
+```http
+POST /shipments
+```
+
+Description: Create a shipment that represents the physical shipment of packages that will be sent to ShaQ Express.
+
+#### Headers
+
+| Parameter       | Type     | Description   |
+| :-------------- | :------- | :------------ |
+| `Authorization` | `bearer` | **Required**. |
+
+#### Request Parameters
+
+| Parameter                                | Type          | Description                                       |
+| :--------------------------------------- | :------------ | :------------------------------------------------ |
+| `packages`                               | `array`       | **required**.                                     |
+| `packages.*.tracking_number`             | `string`      | **optional**.                                     |
+| `packages.*.partner_ref`                 | `string`      | **required**.                                     |
+| `packages.*.customer_name`               | `string`      | **required**.                                     |
+| `packages.*.customer_phone_1`            | `string`      | **required**.                                     |
+| `packages.*.customer_phone_2`            | `string`      | **optional**.                                     |
+| `packages.*.source_country_iso2`         | `string`      | **required**.                                     |
+| `packages.*.source_address_line_1`       | `string`      | **required**.                                     |
+| `packages.*.source_address_line_2`       | `string`      | **optional**.                                     |
+| `packages.*.destination_country_iso2`    | `string`      | **required**.                                     |
+| `packages.*.destination_region`          | `string`      | **required if `region_id` is empty**.             |
+| `packages.*.destination_city`            | `string`      | **required**.                                     |
+| `packages.*.destination_address_line_1`  | `string`      | **required**.                                     |
+| `packages.*.destination_address_line_2`  | `string`      | **optional**.                                     |
+| `packages.*.destination_postal_code`     | `string`      | **optional**.                                     |
+| `packages.*.length`                      | `decimal`     | **optional**.                                     |
+| `packages.*.height`                      | `decimal`     | **optional**.                                     |
+| `packages.*.weight`                      | `decimal`     | **optional**.                                     |
+| `packages.*.description`                 | `string`      | **required**.                                     |
+| `packages.*.units`                       | `string`      | **required**.                                     |
+| `packages.*.type`                        | `string`      | **required** . in `parcel`, `box`                 |
+| `packages.*.handling`                    | `string`      | **required** . in `normal`, `fragile`             |
+| `packages.*.special_instructions`        | `string`      | **optional**.                                     |
+| `packages.*.latitude`                    | `decimal`     | **optional**.                                     |
+| `packages.*.longitude`                   | `decimal`     | **optional**.                                     |
+| `packages.*.value`                       | `decimal`     | **required**.                                     |
+| `packages.*.items`                       | `array`       | **required**. {name, quantity}                    |
+| `packages.*.region_id`                   | `integer`     | **required if `destination_region` is empty**.    |
+
+##### Response
+
+200
+
+```json
+{
+    "message": "Shipment created successfully",
     "data": null
 }
 ```
