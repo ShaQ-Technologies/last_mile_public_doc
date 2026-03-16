@@ -51,7 +51,7 @@ Api documentation for ShaQ Express Partners Last Delivery
 
 `suspected_scam` : Delivery is on hold due to suspected scam
 
-`return_home` : Package is being returned to ShaQ Express main warehouse after multiple unsuccessful delivery
+`return_home` : Package is being returned to ShaQ Express central warehouse after multiple unsuccessful delivery
 
 ## Endpoints
 
@@ -449,6 +449,7 @@ Description: Create multiple packages for shipment
 | Parameter                                | Type          | Description                                       |
 | :--------------------------------------- | :------------ | :------------------------------------------------ |
 | `packages`                               | `array`       | **required**.                                     |
+| `packages.*.tracking_number`             | `string`      | **optional**.                                     |
 | `packages.*.partner_ref`                 | `string`      | **required**.                                     |
 | `packages.*.customer_name`               | `string`      | **required**.                                     |
 | `packages.*.customer_phone_1`            | `string`      | **required**.                                     |
