@@ -324,112 +324,6 @@ Description: Delete a package. Only pending packages can be deleted
 }
 ```
 
-### Create Single Package
-
-```http
-POST /packages
-```
-
-Description: Create a package
-
-#### Headers
-
-| Parameter       | Type     | Description   |
-| :-------------- | :------- | :------------ |
-| `Authorization` | `bearer` | **Required**. |
-
-#### Request Parameters
-
-| Parameter                     | Type          | Description                                       |
-| :---------------------------- | :------------ | :------------------------------------------------ |
-| `tracking_number`             | `string`      | **optional**.                                     |
-| `partner_ref`                 | `string`      | **required**.                                     |
-| `customer_name`               | `string`      | **required**.                                     |
-| `customer_phone_1`            | `string`      | **required**.                                     |
-| `customer_phone_2`            | `string`      | **optional**.                                     |
-| `source_country_iso2`         | `string`      | **required**.                                     |
-| `source_address_line_1`       | `string`      | **required**.                                     |
-| `source_address_line_2`       | `string`      | **optional**.                                     |
-| `destination_country_iso2`    | `string`      | **required**.                                     |
-| `destination_region`          | `string`      | **required if `region_id` is empty**.             |
-| `destination_city`            | `string`      | **required**.                                     |
-| `destination_address_line_1`  | `string`      | **required**.                                     |
-| `destination_address_line_2`  | `string`      | **optional**.                                     |
-| `destination_postal_code`     | `string`      | **optional**.                                     |
-| `length`                      | `decimal`     | **optional**.                                     |
-| `height`                      | `decimal`     | **optional**.                                     |
-| `weight`                      | `decimal`     | **optional**.                                     |
-| `description`                 | `string`      | **required**.                                     |
-| `units`                       | `string`      | **required**.                                     |
-| `type`                        | `string`      | **required** . in `parcel`, `box`                 |
-| `handling`                    | `string`      | **required** . in `normal`, `fragile`             |
-| `special_instructions`        | `string`      | **optional**.                                     |
-| `latitude`                    | `decimal`     | **optional**.                                     |
-| `longitude`                   | `decimal`     | **optional**.                                     |
-| `value`                       | `decimal`     | **required**.                                     |
-| `items`                       | `array`       | **required**. {name, quantity}                    |
-| `include_label`               | `boolean`     | **optional**.   default `false`                   |
-| `region_id`                   | `integer`     | **required if `destination_region` is empty**.    |
-
-##### Response
-
-200
-
-```json
-{
-    "message": "Package created successfully",
-    "data": {
-        "partnerRef": "FGVHKJ567",
-        "trackingNumber": "20250410X51DIQ",
-        "customerName": "Kwaku Ananse",
-        "customerPhone1": "+233244100200",
-        "customerPhone2": null,
-        "sourceCountry": "Ghana",
-        "sourceAddressLine1": "Accra Spintex",
-        "sourceAddressLine2": null,
-        "destinationCountry": "Ghana",
-        "destinationRegion": "Greater Accra",
-        "destinationCity": "Accra",
-        "destinationAddressLine1": "UPSA Hall, Room 3",
-        "destinationAddressLine2": null,
-        "destinationPostalCode": null,
-        "length": 0,
-        "height": 5,
-        "weight": 1.2,
-        "description": "iPhone 16 pro max black edge silver back casing",
-        "labelUrl": null,
-        "units": 1,
-        "type": "box",
-        "value": "300.00",
-        "handling": "normal",
-        "specialInstructions": null,
-        "status": "pending",
-        "statusDescription": "Package is yet to be received from Partner.",
-        "latitude": null,
-        "longitude": null,
-        "dateCreated": "2025-04-10 11:15",
-        "items": [
-            {
-                "name" : "iPhone 6",
-                "quantity" : 1,
-            },
-            {
-                "name" : "iPhone 14 Pro",
-                "quantity" : 2,
-            }
-        ],
-         "trackingHistory": [
-            {
-                "name": "pending",
-                "description": "Package is yet to be received by Partner.",
-                "date": "2025-07-14 10:38",
-                "comment": null
-            }
-        ]
-    }
-}
-```
-
 ### Create Bulk Packages
 
 ```http
@@ -541,8 +435,129 @@ Description: Create a shipment that represents the physical shipment of packages
 
 ```json
 {
-    "message": "Shipment created successfully",
-    "data": null
+    "message": "Request successful",
+    "data": {
+        "reference": "PAR-20260322053800",
+        "date": "2026-03-22 05:38",
+        "packages": [
+            {
+                "partnerRef": "qwertyui1a1aaqweqqaqx",
+                "trackingNumber": "C561819A",
+                "customerName": "Hema Mirpuri",
+                "customerPhone1": "+233244601165",
+                "customerPhone2": null,
+                "sourceAddressLine1": "Accra spintex basket junction",
+                "sourceAddressLine2": null,
+                "destinationRegion": "Greater Accra",
+                "destinationCity": "Tesano",
+                "destinationAddressLine1": "OPP total filling station Abeka tesano",
+                "destinationAddressLine2": null,
+                "destinationPostalCode": null,
+                "length": 0,
+                "height": 0,
+                "weight": 0,
+                "description": "Color Splicing Cotton Rope Storage Basket Toys Clothes Sundries Storage Basket AB-026 - Beige Yellow+White",
+                "units": 7,
+                "type": "parcel",
+                "handling": "normal",
+                "specialInstructions": null,
+                "status": "pending",
+                "statusDescription": "Package is yet to be received by Partner",
+                "latitude": null,
+                "longitude": null,
+                "value": "1468.00",
+                "date": "2026-03-22 05:38",
+                "trackingUrl": "https://dev.tracking-website.pages.dev/packages/C561819A",
+                "items": [
+                    {
+                        "name": "14cm Alya Glass Cookie Holder - Transparent",
+                        "quantity": 4
+                    },
+                    {
+                        "name": "10.6 Color Splicing Cotton Rope Storage Basket Toys Clothes Sundries Storage Basket AB-026 - Beige Yellow+White",
+                        "quantity": 1
+                    },
+                    {
+                        "name": "6 Pieces Nossa 21cm Cake Plate Set",
+                        "quantity": 1
+                    }
+                ]
+            }
+        ]
+    }
+}
+```
+
+### Get single Shipment
+
+```http
+GET /shipments/{reference}
+```
+
+Description: Get package details
+
+#### Headers
+
+| Parameter       | Type     | Description   |
+| :-------------- | :------- | :------------ |
+| `Authorization` | `bearer` | **Required**. |
+
+#### Response
+
+200
+
+```json
+{
+    "message": "Request successful",
+    "data": {
+        "reference": "SAAM-20260322053800",
+        "date": "2026-03-22 05:38",
+        "packages": [
+            {
+                "partnerRef": "qwertyui1a1aaqweqqaqx",
+                "trackingNumber": "C561819A",
+                "customerName": "Kwaku Ananse",
+                "customerPhone1": "+233244100200",
+                "customerPhone2": null,
+                "sourceAddressLine1": "Accra spintex basket junction",
+                "sourceAddressLine2": null,
+                "destinationRegion": "Greater Accra",
+                "destinationCity": "Accra",
+                "destinationAddressLine1": "UPSA Hall, Room 3",
+                "destinationAddressLine2": null,
+                "destinationPostalCode": null,
+                "length": 0,
+                "height": 5,
+                "weight": 1.2,
+                "description": "iPhone 16 pro max black edge silver back casing",
+                "units": 1,
+                "type": "box",
+                "handling": "normal",
+                "specialInstructions": null,
+                "status": "pending",
+                "statusDescription": "Package is yet to be received by Partner",
+                "latitude": null,
+                "longitude": null,
+                "value": "1468.00",
+                "date": "2026-03-22 05:38",
+                "trackingUrl": "https://dev.tracking-website.pages.dev/packages/C561819A",
+                "items": [
+                    {
+                        "name": "14cm Alya Glass Cookie Holder - Transparent",
+                        "quantity": 4
+                    },
+                    {
+                        "name": "10.6 Color Splicing Cotton Rope Storage Basket Toys Clothes Sundries Storage Basket AB-026 - Beige Yellow+White",
+                        "quantity": 1
+                    },
+                    {
+                        "name": "6 Pieces Nossa 21cm Cake Plate Set",
+                        "quantity": 1
+                    }
+                ]
+            }
+        ]
+    }
 }
 ```
 
