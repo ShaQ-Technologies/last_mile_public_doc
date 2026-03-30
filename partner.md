@@ -324,7 +324,7 @@ Description: Delete a package. Only pending packages can be deleted
 }
 ```
 
-### Create Bulk Packages
+### Create Packages
 
 ```http
 POST /packages/bulk
