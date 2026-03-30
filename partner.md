@@ -955,7 +955,7 @@ Description: Create a package to replace an existing package
 ### Receive Package Status Updates Through Webhook
 
 ```http
-POST /YOUR_WEBHOOK_URL
+POST YOUR_WEBHOOK_URL
 ```
 
 Description: We will send package status updates to your webhook
