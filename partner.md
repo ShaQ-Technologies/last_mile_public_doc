@@ -131,6 +131,8 @@ Description: Get all packages
                 "units": 1,
                 "type": "box",
                 "value": "300.00",
+                "amountToCollect": "300.00",
+                "paymentCollector": "shaq",
                 "handling": "normal",
                 "specialInstructions": null,
                 "status": "delivered",
@@ -173,6 +175,8 @@ Description: Get all packages
                 "units": 1,
                 "type": "box",
                 "value": "300.00",
+                "amountToCollect": "300.00",
+                "paymentCollector": "shaq",
                 "handling": "normal",
                 "specialInstructions": null,
                 "status": "pending",
@@ -190,7 +194,7 @@ Description: Get all packages
             }
         ],
         "meta": {
-            "total": 1,
+            "total": 2,
             "perPage": 15,
             "currentPage": 1,
             "lastPage": 1
@@ -243,6 +247,8 @@ Description: Get package details
         "units": 1,
         "type": "box",
         "value": "300.00",
+        "amountToCollect": "300.00",
+        "paymentCollector": "shaq",
         "handling": "normal",
         "specialInstructions": null,
         "status": "not_delivered",
@@ -368,8 +374,11 @@ Description: Create multiple packages
 | `packages.*.latitude`                    | `decimal`     | **optional**.                                     |
 | `packages.*.longitude`                   | `decimal`     | **optional**.                                     |
 | `packages.*.value`                       | `decimal`     | **required**.                                     |
+| `packages.*.amountToCollect`             | `decimal`     | **required**.                                     |
+| `packages.*.paymentCollector`            | `string`      | **required**. in `shaq`, `partner` (specify who collects money from customer) |
 | `packages.*.items`                       | `array`       | **required**. {name, quantity}                    |
 | `packages.*.region_id`                   | `integer`     | **required if `destination_region` is empty**.    |
+| `packages.*.items`                       | `array`       | **required**. {name, quantity}                    |
 
 ##### Response
 
@@ -426,6 +435,8 @@ Description: Create a shipment that represents the physical shipment of packages
 | `packages.*.latitude`                    | `decimal`     | **optional**.                                     |
 | `packages.*.longitude`                   | `decimal`     | **optional**.                                     |
 | `packages.*.value`                       | `decimal`     | **required**.                                     |
+| `packages.*.amountToCollect`             | `decimal`     | **required**.                                     |
+| `packages.*.paymentCollector`            | `string`      | **required**. in `shaq`, `partner` (specify who collects money from customer) |
 | `packages.*.items`                       | `array`       | **required**. {name, quantity}                    |
 | `packages.*.region_id`                   | `integer`     | **required if `destination_region` is empty**.    |
 
@@ -466,6 +477,8 @@ Description: Create a shipment that represents the physical shipment of packages
                 "latitude": null,
                 "longitude": null,
                 "value": "1468.00",
+                "amountToCollect": "1468.00",
+                "paymentCollector": "shaq",
                 "date": "2026-03-22 05:38",
                 "trackingUrl": "https://dev.tracking-website.pages.dev/packages/C561819A",
                 "items": [
@@ -539,6 +552,8 @@ Description: Get package details
                 "latitude": null,
                 "longitude": null,
                 "value": "1468.00",
+                "amountToCollect": "1468.00",
+                "paymentCollector": "shaq",
                 "date": "2026-03-22 05:38",
                 "trackingUrl": "https://dev.tracking-website.pages.dev/packages/C561819A",
                 "items": [
