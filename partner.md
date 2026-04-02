@@ -374,13 +374,13 @@ Description: Create multiple packages
 | `packages.*.latitude`                    | `decimal`     | **optional**.                                     |
 | `packages.*.longitude`                   | `decimal`     | **optional**.                                     |
 | `packages.*.value`                       | `decimal`     | **required**.                                     |
-| `packages.*.amountToCollect`             | `decimal`     | **required**.                                     |
-| `packages.*.paymentCollector`            | `string`      | **required**. in `shaq`, `partner` (specify who collects money from customer) |
+| `packages.*.amount_to_collect`           | `decimal`     | **optional**. defaults to package `value`.        |
+| `packages.*.payment_collector`           | `string`      | **optional**. in `shaq`, `partner` (Specify who collects money from customer. Defaults to agreed payment collector indicated in business agreement.) |
 | `packages.*.items`                       | `array`       | **required**. {name, quantity}                    |
 | `packages.*.region_id`                   | `integer`     | **required if `destination_region` is empty**.    |
 | `packages.*.items`                       | `array`       | **required**. {name, quantity}                    |
 
-##### Response
+#### Response
 
 200
 
@@ -435,12 +435,12 @@ Description: Create a shipment that represents the physical shipment of packages
 | `packages.*.latitude`                    | `decimal`     | **optional**.                                     |
 | `packages.*.longitude`                   | `decimal`     | **optional**.                                     |
 | `packages.*.value`                       | `decimal`     | **required**.                                     |
-| `packages.*.amountToCollect`             | `decimal`     | **required**.                                     |
-| `packages.*.paymentCollector`            | `string`      | **required**. in `shaq`, `partner` (specify who collects money from customer) |
+| `packages.*.amount_to_collect`           | `decimal`     | **optional**. defaults to package `value`.        |
+| `packages.*.payment_collector`           | `string`      | **optional**. in `shaq`, `partner` (Specify who collects money from customer. If not provided, it will default to agreed payment collector indicated in business agreement.) |
 | `packages.*.items`                       | `array`       | **required**. {name, quantity}                    |
 | `packages.*.region_id`                   | `integer`     | **required if `destination_region` is empty**.    |
 
-##### Response
+#### Response
 
 200
 
@@ -618,74 +618,10 @@ Description: Update a specific package
 | `latitude`                    | `decimal`     | **optional**.                         |
 | `longitude`                   | `decimal`     | **optional**.                         |
 | `value`                       | `decimal`     | **optional**.                         |
+| `amount_to_collect`           | `decimal`     | **optional**.                         |
+| `payment_collector`           | `string`      | **optional**. in `shaq`, `partner`    |
 | `items`                       | `array`       | **optional**. {name, quantity}        |
 | `include_label`               | `boolean`     | **optional**.                         |
-
-##### Response
-
-200
-
-```json
-{
-    "message": "Request successful",
-    "data": {
-        "partnerRef": "12345",
-        "trackingNumber": "20250410X51DIQ",
-        "customerName": "Kwaku Ananse",
-        "customerPhone1": "+233266100200",
-        "customerPhone2": "+233255100200",
-        "sourceCountry": "China",
-        "sourceAddressLine1": "Beijing",
-        "sourceAddressLine2": "Hana Province 14th street",
-        "destinationCountry": "Ghana",
-        "destinationRegion": "Ashanti",
-        "destinationCity": "Kumasi",
-        "destinationAddressLine1": "knust",
-        "destinationAddressLine2": "katanga room 4",
-        "length": 31,
-        "height": 20,
-        "weight": 3,
-        "description": "Samsing 16 pro max black edge silver back casing",
-        "units": 1,
-        "type": "box",
-        "handling": "normal",
-        "hasLabel": true,
-        "status": "pending",
-        "statusDescription": "Package is yet to be received from Partner.",
-        "latitude": 1.3,
-        "longitude": -4.34,
-        "proofPhotoUrl": null,
-        "dateCreated": "2025-04-10 07:13",
-        "trackingHistory": [
-            {
-                "name": "pending",
-                "description": "Package is yet to be received from Partner.",
-                "date": "2025-04-10 07:13"
-            }
-        ]
-    }
-}
-```
-
-### Update Package status
-
-```http
-POST /packages/{partnerRef}/update-status
-```
-
-Description: Update the status of a package
-
-#### Headers
-
-| Parameter       | Type     | Description   |
-| :-------------- | :------- | :------------ |
-| `Authorization` | `bearer` | **Required**. |
-
-#### Request Parameters
-
-| Parameter                     | Type          | Description                               |
-| :---------------------------- | :------------ | :---------------------------------------- |
-| `status`                      | `string`      | **required** . in `pending`, `shipped`    |
 
 ##### Response
 
@@ -717,12 +653,15 @@ Description: Update the status of a package
         "units": 1,
         "type": "box",
         "value": "300.00",
+        "amountToCollect": "300.00",
+        "paymentCollector": "shaq",
         "handling": "normal",
         "specialInstructions": null,
         "status": "not_delivered",
         "statusDescription": "Attempted delivery but couldn't complete it.",
         "latitude": null,
         "longitude": null,
+        "proofPhotoUrl": "https://debtufr1vwh35.cloudfront.net/labels_test/label/8B73CE6D.png",
         "dateCreated": "2025-04-10 11:15",
         "items": [
             {
@@ -747,24 +686,6 @@ Description: Update the status of a package
                 "date": "2025-07-15 15:45",
                 "comment": null
             },
-            {
-                "name": "confirmed",
-                "description": "Customer has been called and delivery confirmed.",
-                "date": "2025-07-15 15:45",
-                "comment": null
-            },
-            {
-                "name": "received",
-                "description": "Package has been received from Partner.",
-                "date": "2025-07-15 15:38",
-                "comment": null
-            },
-            {
-                "name": "pending",
-                "description": "Package is yet to be received by Partner.",
-                "date": "2025-07-14 10:38",
-                "comment": null
-            }
         ]
     }
 }
@@ -792,9 +713,21 @@ Description: Get tracking statuses of a specific package
 {
     "message": "Package tracking",
     "data": {
+        "partnerRef": "FGVHKJ567",
+        "trackingNumber": "20250410X51DIQ",
         "description": "Kitchen cabinet",
         "status": "shipped",
         "statusDescription": "Package has been shipped by Partner.",
+        "items": [
+            {
+                "name" : "iPhone 6",
+                "quantity" : 1,
+            },
+            {
+                "name" : "iPhone 14 Pro",
+                "quantity" : 2,
+            }
+        ],
         "tracking": [
             {
                 "status": "shipped",
