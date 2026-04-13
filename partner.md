@@ -619,9 +619,7 @@ Description: Update a specific package
 | `longitude`                   | `decimal`     | **optional**.                         |
 | `value`                       | `decimal`     | **optional**.                         |
 | `amount_to_collect`           | `decimal`     | **optional**.                         |
-| `payment_collector`           | `string`      | **optional**. in `shaq`, `partner`    |
 | `items`                       | `array`       | **optional**. {name, quantity}        |
-| `include_label`               | `boolean`     | **optional**.                         |
 
 ##### Response
 
