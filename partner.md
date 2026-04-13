@@ -357,7 +357,6 @@ Description: Create multiple packages
 | `packages.*.source_country_iso2`         | `string`      | **required**.                                     |
 | `packages.*.source_address_line_1`       | `string`      | **required**.                                     |
 | `packages.*.source_address_line_2`       | `string`      | **optional**.                                     |
-| `packages.*.destination_country_iso2`    | `string`      | **required**.                                     |
 | `packages.*.destination_region`          | `string`      | **required if `region_id` is empty**.             |
 | `packages.*.destination_city`            | `string`      | **required**.                                     |
 | `packages.*.destination_address_line_1`  | `string`      | **required**.                                     |
@@ -418,7 +417,6 @@ Description: Create a shipment that represents the physical shipment of packages
 | `packages.*.source_country_iso2`         | `string`      | **required**.                                     |
 | `packages.*.source_address_line_1`       | `string`      | **required**.                                     |
 | `packages.*.source_address_line_2`       | `string`      | **optional**.                                     |
-| `packages.*.destination_country_iso2`    | `string`      | **required**.                                     |
 | `packages.*.destination_region`          | `string`      | **required if `region_id` is empty**.             |
 | `packages.*.destination_city`            | `string`      | **required**.                                     |
 | `packages.*.destination_address_line_1`  | `string`      | **required**.                                     |
@@ -601,7 +599,6 @@ Description: Update a specific package
 | `source_country_iso2`         | `string`      | **optional**.                         |
 | `source_address_line_1`       | `string`      | **optional**.                         |
 | `source_address_line_2`       | `string`      | **optional**.                         |
-| `destination_country_iso2`    | `string`      | **optional**.                         |
 | `destination_region`          | `string`      | **optional**.                         |
 | `destination_city`            | `string`      | **optional**.                         |
 | `destination_address_line_1`  | `string`      | **optional**.                         |
